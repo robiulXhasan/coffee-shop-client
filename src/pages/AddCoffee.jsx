@@ -1,4 +1,5 @@
 import React from "react";
+import Swal from "sweetalert2";
 
 const AddCoffee = () => {
   const handleAddCoffee = (event) => {
@@ -21,7 +22,17 @@ const AddCoffee = () => {
       body: JSON.stringify(addedCoffee),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Coffee successfully added!",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+        }
+      });
   };
   return (
     <div className="w-10/12 mx-auto mt-10  bg-[#F4F3F0] p-10">

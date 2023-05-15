@@ -26,7 +26,9 @@ const Coffee = ({ coffee, handleDelete }) => {
           </p>
         </div>
         <div className="btn-group btn-group-vertical space-y-3">
-          <button className="btn btn-active">View</button>
+          <button className="btn btn-active">
+            <Link to={`/details/${_id}`}>View</Link>
+          </button>
           <button className="btn btn-warning">
             <Link to={`/updateCoffee/${_id}`}>Edit</Link>
           </button>
