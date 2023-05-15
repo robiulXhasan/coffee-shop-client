@@ -13,7 +13,7 @@ const AddCoffee = () => {
     const photo = form.photo.value;
     const addedCoffee = { name, chef, supplier, taste, category, details, photo };
     console.log(addedCoffee);
-    fetch("http://localhost:5000/addCoffee", {
+    fetch("http://localhost:5000/coffee", {
       method: "POST",
       headers: {
         "content-type": "application/json",
