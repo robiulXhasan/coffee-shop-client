@@ -17,7 +17,7 @@ const AllCoffees = ({ coffeeData }) => {
       });
   };
   return (
-    <div className="w-10/12 mx-auto grid grid-cols-2 gap-10">
+    <div className="w-10/12 mx-auto grid md:grid-cols-2 gap-10 mt-20">
       {coffees.map((coffee) => (
         <Coffee key={coffee._id} coffee={coffee} handleDelete={handleDelete}></Coffee>
       ))}

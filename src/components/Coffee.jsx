@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Coffee = ({ coffee, handleDelete }) => {
   const { _id, name, chef, supplier, taste, category, details, photo } = coffee;
 
   return (
-    <div className="card card-side bg-[#F5F4F1] shadow-xl p-3 border mt-20">
+    <div className="card card-side bg-[#F5F4F1] shadow-xl p-3 border">
       <figure>
         <img src={photo} alt="Movie" />
       </figure>
@@ -26,7 +27,9 @@ const Coffee = ({ coffee, handleDelete }) => {
         </div>
         <div className="btn-group btn-group-vertical space-y-3">
           <button className="btn btn-active">View</button>
-          <button className="btn btn-warning">Edit</button>
+          <button className="btn btn-warning">
+            <Link to={`/updateCoffee/${_id}`}>Edit</Link>
+          </button>
           <button onClick={() => handleDelete(_id)} className="btn bg-red-700">
             Delete
           </button>
